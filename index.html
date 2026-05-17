@@ -2,99 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
 <title>Which My Little Pony Character Are You?</title>
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #ffd6f6, #d6e4ff);
     margin:0;
-    padding:30px;
+    padding:15px;
     display:flex;
     justify-content:center;
 }
 
 .quiz-container{
     background:white;
-    width:90%;
-    max-width:800px;
-    padding:30px;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    width:100%;
+    max-width:750px;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 h1{
     text-align:center;
     color:#ff4fa3;
-    margin-bottom:40px;
+    font-size:22px;
+    margin-bottom:25px;
 }
 
 .question{
-    margin-bottom:35px;
+    margin-bottom:25px;
 }
 
 .question h2{
     color:#444;
-    font-size:20px;
-    margin-bottom:15px;
+    font-size:16px;
+    margin-bottom:10px;
+    line-height:1.4;
 }
 
 label{
     display:block;
     background:#f7f7f7;
-    padding:12px;
-    margin:10px 0;
+    padding:14px;
+    margin:8px 0;
     border-radius:12px;
     cursor:pointer;
     transition:0.2s;
+    font-size:15px;
 }
 
 label:hover{
     background:#ffe6f4;
 }
 
+label:active{
+    transform:scale(0.98);
+}
+
 input{
-    margin-right:10px;
+    margin-right:8px;
+    transform:scale(1.2);
 }
 
 button{
     width:100%;
     padding:16px;
     border:none;
-    border-radius:15px;
+    border-radius:14px;
     background:#ff4fa3;
     color:white;
     font-size:18px;
     cursor:pointer;
-    transition:0.2s;
 }
 
-button:hover{
-    background:#ff2f92;
+button:active{
+    transform:scale(0.98);
 }
 
 #result{
     text-align:center;
-    margin-top:40px;
+    margin-top:25px;
 }
 
 #result img{
-    width:220px;
-    margin-top:20px;
+    width:180px;
+    max-width:80%;
+    margin-top:15px;
 }
 
 .result-title{
-    font-size:30px;
+    font-size:22px;
     color:#ff4fa3;
 }
 
 .result-text{
-    font-size:18px;
+    font-size:15px;
     color:#555;
-    margin-top:10px;
+    margin-top:8px;
+    line-height:1.5;
 }
 
 </style>
@@ -108,189 +121,117 @@ button:hover{
 
 <form id="quizForm">
 
-<!-- QUESTION 1 -->
-
+<!-- Q1 -->
 <div class="question">
 <h2>1. How do people usually describe you?</h2>
-
 <label><input type="radio" name="q1" value="Twilight"> Smart and organized</label>
-
 <label><input type="radio" name="q1" value="Rainbow"> Bold and energetic</label>
-
 <label><input type="radio" name="q1" value="Fluttershy"> Sweet and calm</label>
-
 <label><input type="radio" name="q1" value="Pinkie"> Funny and chaotic</label>
-
 <label><input type="radio" name="q1" value="Rarity"> Stylish and creative</label>
-
 <label><input type="radio" name="q1" value="Applejack"> Honest and dependable</label>
 </div>
 
-<!-- QUESTION 2 -->
-
+<!-- Q2 -->
 <div class="question">
 <h2>2. What’s your biggest strength?</h2>
-
 <label><input type="radio" name="q2" value="Twilight"> Intelligence</label>
-
 <label><input type="radio" name="q2" value="Rainbow"> Confidence</label>
-
 <label><input type="radio" name="q2" value="Fluttershy"> Kindness</label>
-
 <label><input type="radio" name="q2" value="Pinkie"> Humor</label>
-
 <label><input type="radio" name="q2" value="Rarity"> Creativity</label>
-
 <label><input type="radio" name="q2" value="Applejack"> Loyalty</label>
 </div>
 
-<!-- QUESTION 3 -->
-
+<!-- Q3 -->
 <div class="question">
 <h2>3. In a friend group, you are usually...</h2>
-
 <label><input type="radio" name="q3" value="Twilight"> The planner</label>
-
 <label><input type="radio" name="q3" value="Rainbow"> The bold one</label>
-
 <label><input type="radio" name="q3" value="Fluttershy"> The listener</label>
-
 <label><input type="radio" name="q3" value="Pinkie"> The entertainer</label>
-
 <label><input type="radio" name="q3" value="Rarity"> The fashionable one</label>
-
 <label><input type="radio" name="q3" value="Applejack"> The responsible one</label>
 </div>
 
-<!-- QUESTION 4 -->
-
+<!-- Q4 -->
 <div class="question">
-<h2>4. What sounds like your ideal weekend?</h2>
-
-<label><input type="radio" name="q4" value="Twilight"> Reading or learning something new</label>
-
-<label><input type="radio" name="q4" value="Rainbow"> Trying something exciting</label>
-
-<label><input type="radio" name="q4" value="Fluttershy"> Staying home peacefully</label>
-
-<label><input type="radio" name="q4" value="Pinkie"> Hanging out with friends</label>
-
-<label><input type="radio" name="q4" value="Rarity"> Shopping or creating something pretty</label>
-
-<label><input type="radio" name="q4" value="Applejack"> Spending time outdoors</label>
+<h2>4. What’s your ideal weekend?</h2>
+<label><input type="radio" name="q4" value="Twilight"> Reading or learning</label>
+<label><input type="radio" name="q4" value="Rainbow"> Adventure and excitement</label>
+<label><input type="radio" name="q4" value="Fluttershy"> Peaceful home time</label>
+<label><input type="radio" name="q4" value="Pinkie"> Hanging with friends</label>
+<label><input type="radio" name="q4" value="Rarity"> Shopping / creativity</label>
+<label><input type="radio" name="q4" value="Applejack"> Outdoors work</label>
 </div>
 
-<!-- QUESTION 5 -->
-
+<!-- Q5 -->
 <div class="question">
-<h2>5. Which color do you like most?</h2>
-
+<h2>5. Pick a color:</h2>
 <label><input type="radio" name="q5" value="Twilight"> Purple</label>
-
 <label><input type="radio" name="q5" value="Rainbow"> Blue</label>
-
 <label><input type="radio" name="q5" value="Fluttershy"> Yellow</label>
-
 <label><input type="radio" name="q5" value="Pinkie"> Pink</label>
-
 <label><input type="radio" name="q5" value="Rarity"> White</label>
-
 <label><input type="radio" name="q5" value="Applejack"> Orange</label>
 </div>
 
-<!-- QUESTION 6 -->
-
+<!-- Q6 -->
 <div class="question">
-<h2>6. What would you do at a party?</h2>
-
-<label><input type="radio" name="q6" value="Twilight"> Talk to a few close friends</label>
-
-<label><input type="radio" name="q6" value="Rainbow"> Make the party exciting</label>
-
-<label><input type="radio" name="q6" value="Fluttershy"> Stay in a quiet corner</label>
-
-<label><input type="radio" name="q6" value="Pinkie"> Dance and hype everyone up</label>
-
-<label><input type="radio" name="q6" value="Rarity"> Take cute pictures</label>
-
-<label><input type="radio" name="q6" value="Applejack"> Help clean up after</label>
+<h2>6. At a party you...</h2>
+<label><input type="radio" name="q6" value="Twilight"> Talk calmly</label>
+<label><input type="radio" name="q6" value="Rainbow"> Make it exciting</label>
+<label><input type="radio" name="q6" value="Fluttershy"> Stay quiet</label>
+<label><input type="radio" name="q6" value="Pinkie"> Dance everywhere</label>
+<label><input type="radio" name="q6" value="Rarity"> Take cute pics</label>
+<label><input type="radio" name="q6" value="Applejack"> Help others</label>
 </div>
 
-<!-- QUESTION 7 -->
-
+<!-- Q7 -->
 <div class="question">
-<h2>7. Which aesthetic fits you best?</h2>
-
-<label><input type="radio" name="q7" value="Twilight"> Academic / magical</label>
-
+<h2>7. Your aesthetic is...</h2>
+<label><input type="radio" name="q7" value="Twilight"> Academic / magic</label>
 <label><input type="radio" name="q7" value="Rainbow"> Sporty</label>
-
-<label><input type="radio" name="q7" value="Fluttershy"> Soft and cozy</label>
-
-<label><input type="radio" name="q7" value="Pinkie"> Colorful chaos</label>
-
-<label><input type="radio" name="q7" value="Rarity"> Elegant luxury</label>
-
-<label><input type="radio" name="q7" value="Applejack"> Nature and country vibes</label>
+<label><input type="radio" name="q7" value="Fluttershy"> Soft cozy</label>
+<label><input type="radio" name="q7" value="Pinkie"> Color chaos</label>
+<label><input type="radio" name="q7" value="Rarity"> Elegant</label>
+<label><input type="radio" name="q7" value="Applejack"> Nature vibe</label>
 </div>
 
-<!-- QUESTION 8 -->
-
+<!-- Q8 -->
 <div class="question">
-<h2>8. What annoys you the most?</h2>
-
-<label><input type="radio" name="q8" value="Twilight"> Disorganization</label>
-
-<label><input type="radio" name="q8" value="Rainbow"> Being underestimated</label>
-
-<label><input type="radio" name="q8" value="Fluttershy"> Rude people</label>
-
+<h2>8. What annoys you?</h2>
+<label><input type="radio" name="q8" value="Twilight"> Mess</label>
+<label><input type="radio" name="q8" value="Rainbow"> Weak effort</label>
+<label><input type="radio" name="q8" value="Fluttershy"> Rudeness</label>
 <label><input type="radio" name="q8" value="Pinkie"> Boredom</label>
-
-<label><input type="radio" name="q8" value="Rarity"> Bad fashion taste</label>
-
-<label><input type="radio" name="q8" value="Applejack"> Dishonesty</label>
+<label><input type="radio" name="q8" value="Rarity"> Ugly style</label>
+<label><input type="radio" name="q8" value="Applejack"> Lies</label>
 </div>
 
-
-
+<!-- Q9 -->
 <div class="question">
 <h2>9. Pick a pet:</h2>
-
 <label><input type="radio" name="q9" value="Twilight"> Owl</label>
-
 <label><input type="radio" name="q9" value="Rainbow"> Falcon</label>
-
 <label><input type="radio" name="q9" value="Fluttershy"> Bunny</label>
-
 <label><input type="radio" name="q9" value="Pinkie"> Puppy</label>
-
 <label><input type="radio" name="q9" value="Rarity"> Cat</label>
-
 <label><input type="radio" name="q9" value="Applejack"> Horse</label>
 </div>
 
-<!-- QUESTION 10 -->
-
+<!-- Q10 -->
 <div class="question">
-<h2>10. Your friends come to you for...</h2>
-
+<h2>10. Friends come to you for...</h2>
 <label><input type="radio" name="q10" value="Twilight"> Advice</label>
-
 <label><input type="radio" name="q10" value="Rainbow"> Motivation</label>
-
 <label><input type="radio" name="q10" value="Fluttershy"> Comfort</label>
-
 <label><input type="radio" name="q10" value="Pinkie"> Fun</label>
-
 <label><input type="radio" name="q10" value="Rarity"> Style tips</label>
-
 <label><input type="radio" name="q10" value="Applejack"> Honest opinions</label>
 </div>
 
-<button type="button" onclick="showResult()">
-See My Result ✨
-</button>
+<button type="button" onclick="showResult()">See Result ✨</button>
 
 </form>
 
@@ -311,98 +252,58 @@ let scores = {
     Applejack:0
 };
 
-const answers = document.querySelectorAll(
-'input[type="radio"]:checked'
-);
-
-answers.forEach(answer => {
-    scores[answer.value]++;
-});
+document.querySelectorAll('input[type="radio"]:checked')
+.forEach(a => scores[a.value]++);
 
 let winner = "";
-let highest = 0;
+let max = 0;
 
-for(let character in scores){
-
-    if(scores[character] > highest){
-
-        highest = scores[character];
-        winner = character;
+for(let c in scores){
+    if(scores[c] > max){
+        max = scores[c];
+        winner = c;
     }
 }
 
-const result = document.getElementById("result");
+let title="", text="", image="";
 
-let title = "";
-let text = "";
-let image = "";
-
-if(winner === "Twilight"){
-
-title = "Twilight Sparkle";
-
-text = "You are intelligent, organized, and love learning new things.";
-
-image = "rer3.jpg";
+if(winner==="Twilight"){
+title="Twilight Sparkle";
+text="Smart, organized, and loves learning.";
+image="https://i.imgur.com/o7o7Q9H.png";
+}
+else if(winner==="Rainbow"){
+title="Rainbow Dash";
+text="Bold, fast, and confident.";
+image="https://i.imgur.com/Qa6bZ8a.png";
+}
+else if(winner==="Fluttershy"){
+title="Fluttershy";
+text="Kind, gentle, and calm.";
+image="https://i.imgur.com/3X4dsmU.png";
+}
+else if(winner==="Pinkie"){
+title="Pinkie Pie";
+text="Fun, chaotic, and full of energy.";
+image="https://i.imgur.com/BH6xN7L.png";
+}
+else if(winner==="Rarity"){
+title="Rarity";
+text="Creative, elegant, and stylish.";
+image="https://i.imgur.com/F8dYkQx.png";
+}
+else if(winner==="Applejack"){
+title="Applejack";
+text="Honest, hardworking, and reliable.";
+image="https://i.imgur.com/7R8W4vK.png";
 }
 
-else if(winner === "Rainbow"){
-
-title = "Rainbow Dash";
-
-text = "You are bold, energetic, and full of confidence.";
-
-image = "rer6.jpg";
-}
-
-else if(winner === "Fluttershy"){
-
-title = "Fluttershy";
-
-text = "You are gentle, caring, and soft-hearted.";
-
-image = "rer2.jpg";
-}
-
-else if(winner === "Pinkie"){
-
-title = "Pinkie Pie";
-
-text = "You are chaotic, funny, and bring joy everywhere.";
-
-image = "rer4.jpg";
-}
-
-else if(winner === "Rarity"){
-
-title = "Rarity";
-
-text = "You are creative, stylish, and elegant.";
-
-image = "rer1.jpg";
-}
-
-else if(winner === "Applejack"){
-
-title = "Applejack";
-
-text = "You are honest, reliable, and hardworking.";
-
-image = "rer5.jpg";
-}
-
-result.innerHTML = `
-
-<h2 class="result-title">
-You are ${title}! ✨
-</h2>
-
-<p class="result-text">
-${text}
-</p>
-
+document.getElementById("result").innerHTML = `
+<h2 class="result-title">You are ${title}! ✨</h2>
+<p class="result-text">${text}</p>
 <img src="${image}">
 `;
+
 }
 
 </script>
